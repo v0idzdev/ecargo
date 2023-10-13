@@ -1,6 +1,6 @@
-#include "init.h"
-#include "input.h"
-#include "print.h"
+#include "ecargo/init.h"
+#include "ecargo/input.h"
+#include "ecargo/print.h"
 
 #pragma comment(lib, "ws2_32.lib")
 
@@ -20,7 +20,7 @@ main(int argc, char* argv[])
   InitWinsock(&wsa, language);
 
   SOCKET sock = InitSocket(language);
-  char ip[IP_LENGTH] = GetIpInput(language);
+  char ip* = GetIpInput(language);
   unsigned short int port = GetPortInput(language);
 
   printf(TEXT_HORIZONTAL_BAR);

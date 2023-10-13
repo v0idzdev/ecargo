@@ -54,7 +54,5 @@ main(int argc, char* argv[])
       printf("accept failed w code %d", WSAGetLastError());
 
     puts("connection accepted");
-
-    
   }
 }

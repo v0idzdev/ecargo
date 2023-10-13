@@ -10,7 +10,7 @@ target_include_directories(ecargo_utils PUBLIC ../include)
 target_compile_features(ecargo_utils PUBLIC c_std_99)
 
 source_group(
-  TREE "${PROJECT_SOURCE_DIR}/include"
+  TREE "${ecargo_SOURCE_DIR}/include"
   PREFIX "Header Files"
   FILES ${HEADER_LIST}
 )

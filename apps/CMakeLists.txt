@@ -1,7 +1,11 @@
-add_executable(ecargo ecargo.c)
-target_compile_features(ecargo PRIVATE c_std_99)
-target_link_libraries(ecargo)
+set(ecargo_sources
+  "ecargo.c"
+  "ecargo_server.c"
+)
 
-add_executable(ecargo_server ecargo_server.c)
-target_compile_features(ecargo_server PRIVATE c_std_99)
-target_link_libraries(ecargo_server)
+foreach(ecargo_source IN LISTS ecargo_sources)
+  get_filename_component(ecargo_executable ${ecargo_source} NAME_WE)
+  add_executable("${ecargo_executable}" "${ecargo_source}")
+  target_compile_features("${ecargo_executable}" PRIVATE c_std_99)
+  target_link_libraries("${ecargo_executable}" ecargo_utils)
+endforeach()
